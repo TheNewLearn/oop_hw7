@@ -35,4 +35,4 @@ After finishing the `dot` function, at least 8 test cases are required from you 
 
 You should upload the files (exclude bin) to GitLab by following steps given in HW00. You are required to understand the meaning of each commands (`git add`, `git commit`, `git push`) so that you won't make a mistake. Hint: You should start from `git add`.
 
-
+You shuold eiter not add bin foler to your git, or add a file with the name of '.gitignore' in bin folder (see our class repo). You will lost 10% if you bin folder contains compiled ut_all in git repo.
