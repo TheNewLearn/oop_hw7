@@ -11,8 +11,6 @@ double dot(double *u, int dim_u, double *v, int dim_v) {
 
   // shouldn't have different dimensions and negative dimension
   if (dim_u != dim_v || dim_u < 0 || dim_v < 0) {
-    //456
-    //789
   }
 
   // compute the inner product of two vectors
