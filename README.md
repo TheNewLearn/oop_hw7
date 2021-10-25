@@ -1,6 +1,6 @@
-### Homework 01
+### Homework 02
 
-### Due: 11:59 p.m., 15 October 2021
+### Due: 11:59 p.m., 1 November 2021
 
 **In HW02, put all your source code in src/vector_space.h, test code in test/ut_vector_space.h. You can keep files of HW01. But remember to update ut_main.cpp to include ut_vector_space.h**
 
@@ -20,7 +20,7 @@ Test the following situations:
   - scale the vector properly (2 tests, 15% each)
   - throw exception if vector has 0 or negative dimension (10%)
 
-**Watch out!** You lose 5 points for each test that has memory leak.
+**Watch out!** You lose 5 points for each test that has memory leak. You can check memory leak with `valgrind` cmd.
 
 **Note**
 1. Use `ASSERT_EQ` to test integer, `ASSERT_NEAR` to test floating-point number, `ASSERT_THROW` to test exception.
