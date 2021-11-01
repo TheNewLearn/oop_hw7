@@ -8,15 +8,11 @@
 
 The goal of this homework is to practice implement basic constructor, destructor and member functions  (getters/setters).
 
-**Problem to Solve**
+You are going to write a simple program to help cats to track their own toys. In this simple program, a cat have its *name* and *weight*, and can have some *toys* that he/she can choose to bite.
 
-In this homework, you are going to write a simple program to help cats to track their own toys. 
+Then, you have to write a class named ***Cat***, having the above properties as its data member and functions.
 
-In this problem, a cat have its *name* and *weight*, and can have some *toys* that he/she can choose to bite.
-
-For this assignment, you have to write a class named ***Cat***, having the above properties as its data member and functions.
-
-Accordingly, you are required to write **8** test cases in total according to following requirement.
+TO test your program, you are required to write **8** test cases in total according to following requirement.
 
 Test the following situations:
 
