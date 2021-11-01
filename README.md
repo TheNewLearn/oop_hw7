@@ -12,7 +12,7 @@ You are going to write a simple program to help cats to track their own toys. In
 
 Then, you have to write a class named ***Cat***, having the above properties as its data member and functions.
 
-TO test your program, you are required to write **8** test cases in total according to following requirement.
+To test your program, you are required to write **8** test cases in total according to following requirement.
 
 Test the following situations:
 
