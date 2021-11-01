@@ -1,15 +1,15 @@
-.PHONY: directories clean stat
+.PHONY: dirs clean stat
 
-all: directories bin/ut_all
+all: bin/unit
+	
+bin/unit: dirs test/ut_main.cpp test/ut_cat.h src/cat.h
+	g++ -std=c++11 test/ut_main.cpp -o bin/unit -lgtest -lpthread
 
-bin/ut_all: test/ut_main.cpp test/ut_vector_space.h
-	g++ -std=c++11 test/ut_main.cpp -o bin/ut_all -lgtest -lpthread
-
-directories:
+dirs:
 	mkdir -p bin
 
-clean: directories
-	rm -rf bin
+clean: dirs
+	rm bin/*
 
 stat:
 	wc src/* test/*

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "ut_vector_space.h"
+#include "./ut_cat.h"
 
 int main(int argc, char *argv[]) {
   testing::InitGoogleTest(&argc, argv);
