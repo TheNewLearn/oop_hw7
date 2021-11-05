@@ -9,7 +9,7 @@ dirs:
 	mkdir -p bin
 
 clean: dirs
-	rm bin/*
+	rm -rf bin
 
 stat:
 	wc src/* test/*
