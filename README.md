@@ -76,9 +76,17 @@ Pass TA's test cases to get another 45%
 **Watch out!** Lose 10 points if memory leaks.
 
 **Note**
+<<<<<<< HEAD
 1. In this assignment, exceptions should be in string type.
 2. Use `ASSERT_EQ` to test integer, `ASSERT_NEAR` to test floating-point number, `ASSERT_THROW` to test exception.
 3. Please implement your test cases reasonably, otherwise you will get no point for that sub-problem.
 4. You shuold eiter not add bin foler to your git, or add a file with the name of '.gitignore' in bin folder (see our class repo). You will lost 10% if you bin folder contains compiled ut_all in git repo.
 5. If you see segmentation fault, you can use `gdb` cmd to help debug. [Link]{https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/551505/
 }
+=======
+1. Use [nullptr](https://en.cppreference.com/w/cpp/language/nullptr) if you want to have a null pointer, which is a special pointer that doesn't point to anything.
+2. Use `ASSERT_EQ` to test integer, `ASSERT_NEAR` to test floating-point number, `ASSERT_THROW` to test exception.
+3. Please implement your test cases reasonably, otherwise you will get no point for that sub-problem.
+4. You shuold eiter not add bin foler to your git, or add a file with the name of '.gitignore' in bin folder (see our class repo). You will lost 10% if you bin folder contains compiled ut_all in git repo.
+5. If you see segmentation fault, you can use `gdb` cmd to help debug. [Link](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/551505/)
+>>>>>>> e11481306ae8598b2d85cab1682de1f28e98c337
