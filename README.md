@@ -56,20 +56,20 @@ To test your program, you are required to write **7** test cases in total accord
 Test the following situations:
 
 - `Toy::getName` (5%)
-- `Dog::Dog` *(constructor)*
-  - throw exception if Dog have no name (5%)
-  - throw exception if weight of Dog is out of range (5%) \
+- `Cat::Cat` *(constructor)*
+  - throw exception if Cat have no name (5%)
+  - throw exception if weight of Cat is out of range (5%) \
   range: 10 <= weight <= 50
-- `Dog::Dog` *(copy constructor)* (10%)
-- `Dog::operator=` *(copy assignment)* (10%)
-- `Dog::AddNewToy` (5%)
+- `Cat::Cat` *(copy constructor)* (10%)
+- `Cat::operator=` *(copy assignment)* (10%)
+- `Cat::AddNewToy` (5%)
   - allocate dynamically by `new` and `delete` \
   No point if using fixed size array or Standard Template Library.
   - *(hint: you may need the default constructor of Toy)*
-- `Dog::getToy`
+- `Cat::getToy`
   - get Toy by index in sequential order. Index start from 0 (5%)
   - throw exception if index is out of range (5%)
-- `Dog::isHeavierThan` (5%)
+- `Cat::isHeavierThan` (5%)
 
 Pass TA's test cases to get another 45%
 
