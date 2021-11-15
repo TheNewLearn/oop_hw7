@@ -2,7 +2,7 @@
 
 ### Due: 11:59 p.m., 23 November 2021
 
-**In HW04, put all your source code of Toy in src/toyu.h, Cat in src/cat.h and test code in test/ut_cat.h and test/ut_toy.h. You shuold carry on this homework based on HW03. And, please remember to update makeilfe.**
+**In HW04, put all your source code of Toy in src/toy.h, Cat in src/cat.h and test code in test/ut_cat.h and test/ut_toy.h. You shuold carry on this homework based on HW03. And, please remember to update makeilfe.**
 
 **Content of HW04**
 
