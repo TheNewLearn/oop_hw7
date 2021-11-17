@@ -63,8 +63,8 @@ Test the following situations:
 - `Cat::Cat` *(copy constructor)* (10%)
 - `Cat::operator=` *(copy assignment)* (10%)
 - `Cat::AddNewToy` (5%)
-  - allocate dynamically by `new` and `delete` \
-  No point if using fixed size array or Standard Template Library.
+  - allocate dynamically by `new` and `delete` (or std::vector) \
+  No point if using fixed size array.
   - *(hint: you may need the default constructor of Toy)*
 - `Cat::getToy`
   - get Toy by index in sequential order. Index start from 0 (5%)
