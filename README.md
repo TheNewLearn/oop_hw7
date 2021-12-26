@@ -1,6 +1,6 @@
 ### Homework 06
 
-### Due: 11:59 p.m., 26 December 2021
+### Due: 11:59 p.m., ~~26 December 2021~~ 30 December 2021
 
 **Content of HW06**
 
