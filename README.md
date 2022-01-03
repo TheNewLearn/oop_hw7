@@ -1,8 +1,8 @@
-### Homework 06
+### Homework 07
 
 ### Due: 11:59 p.m., 10 Janurary 2022
 
-**Content of HW06**
+**Content of HW07**
 
 Practice inheritance and polymorphism
 
