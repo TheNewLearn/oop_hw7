@@ -1,95 +1,86 @@
 ### Homework 06
 
-### Due: 11:59 p.m., ~~26 December 2021~~ 30 December 2021
+### Due: 11:59 p.m., 10 Janurary 2022
 
 **Content of HW06**
 
-Practice object composition, operator overloading and comparator customization.
+Practice inheritance and polymorphism
 
-The following are examples of the polynomial with single variable $`x`$ (一元多項式):
-
-```math
-x^2 − 4x + 7 \text{ ... (Polynomial 1)} \\
-0            \qquad\qquad\text{ ... (Polynomial 2)}
-```
-$`\text{Polynomial 1}`$ has three terms(項): $`x^2`$, $`-4x`$ and $`7`$; \
-$`\text{Polynomial 2}`$ has one term $`0`$.
-
-As can be seen, each term is represented by a pair of numbers: the coefficient (係數) of the variable and the exponent (冪次) of the variable. \
-For example, the term $`-3x^2`$ is represented by Term(-3, 2) because it has coefficient $`-3`$ and exponent $`2`$.
+***Cat*** and ***Dog*** can be kept as ***Pet***, and all pets have their own *name* and *weight*. \
+Also to take care of the pets, we are able to *feed* them. \
+In this assignment, please write a base class called *Pet* and let *Cat* and *Dog* inherit from it.
 
 **Soure tree**
 
+You will have the following folder structure.
+
 ```
+<student_ID>_HW
 ├── src
-│   ├── polynomial.h
-│   └── term.h
+│   ├── algo.h
+│   ├── cat.h
+│   ├── dog.h
+│   └── pet.h
 ├── test
-│   ├── ut_polynomial.h
-│   ├── ut_term.h
+│   ├── ut_algo.h
+│   ├── ut_cat.h
+│   ├── ut_dog.h
 │   └── ut_main.cpp
 ├── .gitignore
 └── makefile
 ```
 
-**Sample code**
+Though you've seen *Dog* in the previous assignments, to focus on the topic inheritance and polymorphism, \
+you don't have to get your code from history.
 
-For this assignment you need to write class **Polynomial** in "src/polynomial.h" and **unit tests** in "test/ut_polynomial.h".
-Class **Term** is written for you, please clone the folder and files we provide.
+#### 1. Inheritance
 
-Class **Term** has the following functions:
-- `Term(double coef, int exp)`
-    - constructor
-- `Term::coefficient`
-    - get the coefficient (read-only)
-- `Term::exponent`
-    - get the exponent (read-only)
-- `Term::operator==`
-    - return true when two Terms have the same coefficient and exponent
-- `Term::operator*`
-    - multiply two Terms using `*`
-- `Term::operator+`
-    - add two Terms using `+`
-- `Term::isZero`
-    - check if it is zero (coefficient is zero)
+*Pet* should have three member functions
+  - `std::string name()`: all pets have their name, and can get by this function
+  - `double weight()`: all pets have their weight, and can get by this function
+  - `void feed()`: this is a ***pure virtual function***, \
+  since different pets have different reactions after *feed*
 
-Please write tests for consturctors and the following member functions:
-- `Polynomial::Polynomial()`
-  - constructor
-      - Terms should be packed in ascending order with respect to their exponent. \
-      Please use [std::stable_sort](http://www.cplusplus.com/reference/algorithm/stable_sort/) to sort and write the comparison function by yourself. (15%)
-      - Throw exception when there're duplicate terms (with same exponent). (10%)
-      - If the Term does not exist, fill *Term(0,  exponent)* in it, no Terms with exponent lower than degree can be lost. (15%) \
-      For example, a cubic polynomial $`6x^3-3x^2+3`$
+*Cat* and *Dog* should implement the `feed()` function.
 
-        ```c++
-        std::vector<Term> terms = {Term(-3, 2), Term(3, 0), Term(6, 3)};
-        Polynomial p(terms, 3);
-        ```
-        should have the Terms in the following form, conceptually:
-        ```
-        // in concept, not real C++ code
-        Polynomial p {
-            _terms = {Term(3, 0), Term(0, 1), Term(-3, 2), Term(6, 3) },
-            _degree = 3
-        }
-        ```
-- `Polynomial::term`
-  - get the term by exponent (you don't have to test it, but get 5% if it's implemented correctly) 
-  - If the term does not exist, please return *Term(0, exponent)* (5%)
-- `Polynomial Polynomial::operator+ (Polynomial const & q)`
-  - add two polynomials (15%)
-- `Polynomial Polynomial::operator* (Term t)`
-  - multiply by a Term (15%)
-- `Polynomial Polynomial::operator* (Polynomial const & q)`
-  - multiply by another Polynomial (15%)
+#### 2. Polymorphism
 
-You don't have to test `Polynomial::degree`, but get 5% if it is implemented correctly.
+There is a template function in *src/algo.h* called `maxPet()`. \
+We want you to read and understand what it does, and write tests for it.
+
+To test *maxPet*, you'll need to prepare the corresponding comparison functions, \
+please put them in *src/algo.h*.
+
+### Tests
+
+#### 1. Object class
+
+Please write tests for the following constructors and member functions
+- `Cat::Cat(std::string name, double weight)`
+  - take name and weight as the parameters, and initialize the data members correctly (8%)
+  - throw exception in type `std::range_error` when having weight under(<) 2 or over(>) 6 (4%)
+- `Cat::feed()`
+  - weight grows 0.2 every feed (8%)
+  - throw exception in type `std::out_of_range` when weight exceeds the limit 6 after feed (4%)
+- `Dog::Dog(std::string name, double weight)`
+  - take name and weight as the parameters, and initialize the data members correctly (8%)
+  - throw exception in type `std::range_error` when having weight under(<) 10 or over(>) 50 (4%)
+- `Dog::feed()`
+  - weight grows 0.8 every feed (8%)
+  - throw exception in type `std::out_of_range` when weight exceeds the limit 50 after feed (4%)
+
+You don't have to test `name()`and `weight()` individually, but get 10% each if they are implemented correctly under the base class. \
+Also the base class *Pet* should be an *abstract class*, 8% for the *pure virtual function* `Pet::feed()`, \
+8% for the destructor `Pet::~Pet()`. You should avoid potential memory leaks.
+
+#### 2. Template function
+
+Please write tests in *test/ut_algo.h*, by using `maxPet()` to find the largest weight or the longest name of pets.
+- Get the pet which has the largest weight from a std::vector of pets (8%)
+- Get the pet which has the longest name from a std::vector of pets (8%)
 
 ***Note:***
-1. To test exception, use **ASSERT_THROW(statement, exception_type)**. \
-In this assignment, exception should be in string type.
-2. Please implement your test cases reasonably, or you **will get no point** for that sub-problem.
-3. You shuold eiter not add bin foler to your git, or add a file with the name of '.gitignore' in bin folder (see our class repo). You will lost 10% if you bin folder contains compiled ut_all in git repo.
-4. If you see segmentation fault, you can use `gdb` cmd to help debug. [Link]{https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/551505/
+1. Please implement your test cases reasonably, or you **will get no point** for that sub-problem.
+2. You shuold eiter not add bin foler to your git, or add a file with the name of '.gitignore' in bin folder (see our class repo). You will lost 10% if you bin folder contains compiled ut_all in git repo.
+3. If you see segmentation fault, you can use `gdb` cmd to help debug. [Link]{https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/551505/
 }
