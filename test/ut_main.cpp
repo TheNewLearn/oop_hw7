@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "ut_algo.h"
+#include "ut_term.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
