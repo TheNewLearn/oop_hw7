@@ -13,7 +13,7 @@ public:
     }
 
     void feed(){
-        if(weight_ < 50){
+        if((weight_ + 0.8) <= 50){
             weight_ += 0.8;
         }
         else{

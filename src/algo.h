@@ -2,7 +2,7 @@
 #define ALGO_H
 #include <iostream>
 #include "pet.h"
-#include "cat.h"
+
 
 // algo is used to practice polymorphism and see more usages of templates
 
@@ -32,13 +32,16 @@ ForwardIterator maxPet(ForwardIterator first, ForwardIterator last, Compare comp
     }
     ++first;
   }
-  std::cout << largest;
   return largest;
 }
 
-static bool mycom(Pet *t1, Pet *t2){
-    return t1 -> getweight() > t2 -> getweight();
+static bool mycom(Pet t1, Pet t2){
+    return t1.getweight() < t2.getweight();
 }
+static bool mycom_name(Pet t1, Pet t2){
+    return t1.getname().length() < t2.getname().length();
+}
+
 
 
 #endif /* end of include guard: ALGO_H */

@@ -17,7 +17,7 @@ public:
 
     void feed()
     {
-        if (weight_ < 6)
+        if ((weight_ + 0.2) < 6 )
         {
             weight_ += 0.2;
         }
